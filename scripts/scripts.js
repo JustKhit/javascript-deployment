@@ -6,7 +6,7 @@ You are encouraged to use the provided naming convention for ease of review.
 
 */
 
-window.onload = () => {
+window.onload = function() {
     /****************** create variables ******************/
     /* create variables to hold the values for modelName and duration */
 
@@ -18,8 +18,8 @@ window.onload = () => {
     const switchModelButton = document.getElementById("model-button");
     const changeDurationButton = document.getElementById("duration-button");
 
-    let modelName = "XYZ"
-    let duration = 0
+    let modelName = "XYZ";
+    let duration = 0;
 
     /****************** helper function ******************/
     /* create a function called recalculate() which will
@@ -32,19 +32,19 @@ window.onload = () => {
     */
 
     // INSERT YOUR CODE HERE
-    const recalculate = () => {
+    const recalculate = function() {
         let newTotalCost;
         switch (modelName) {
             case "XYZ":
-                newTotalCost = duration * 100
+                newTotalCost = duration * 100;
                 break;
             case "CPRG":
-                newTotalCost = duration * 213
+                newTotalCost = duration * 213;
                 break;
         }
 
         costLabel.innerHTML = newTotalCost;
-    }
+    };
 
 
     /****************** model button logic ******************/
@@ -59,7 +59,7 @@ window.onload = () => {
     - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
 
     // INSERT YOUR CODE HERE
-    const changeModel = () => {
+    const changeModel = function() {
         switch (modelName) {
             case "XYZ":
                 modelName = "CPRG";
@@ -69,9 +69,9 @@ window.onload = () => {
                 break;
         }
 
-        modelLabel.innerHTML = `Model ${modelName}`;
-        recalculate()
-    }
+        modelLabel.innerHTML = "Model" + " " + modelName;
+        recalculate();
+    };
 
     switchModelButton.addEventListener("click", changeModel);
 
@@ -87,11 +87,11 @@ window.onload = () => {
     */
 
     // INSERT YOUR CODE HERE
-    const changeDuration = () => {
-        duration = prompt("Please enter a new duration")
-        durationLabel.innerHTML = duration
-        recalculate()
-    }
+    const changeDuration = function() {
+        duration = prompt("Please enter a new duration");
+        durationLabel.innerHTML = duration;
+        recalculate();
+    };
 
     changeDurationButton.addEventListener("click", changeDuration);
-}
+};
